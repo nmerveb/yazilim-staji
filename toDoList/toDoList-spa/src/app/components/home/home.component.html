@@ -1,0 +1,113 @@
+    <body *ngIf="!isAuthenticated" style="background-color: #F2F3F4;">
+        <div class="page-home" >
+            <div class="container">
+                <div class="row" style=" height:735px;">
+                    <div class="login" style="margin-left: 200px; width:650px;">
+                        <mat-card >
+                            <div  >
+                                <img  src="../../../assets/svg/dosya.svg" class="baslik-icon">
+                            </div>                          
+                            <p style="font-size: 35px; text-align: center; margin-bottom:50px;">Listelerinize erişmek için <br> login olmanız gerekmektedir.</p>
+                            <div>
+                                <button mat-raised-button color="primary"  style=" font-size:25px; margin-left:200px; margin-top:55px;  margin-bottom:150px; width:200px; height:50px;" routerLink="../login">Login</button>                               
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+
+<body *ngIf="isAuthenticated"  style="background-color:#F2F3F4; height:835px;">
+        <div class="page home">
+        <div class="container">
+                <button mat-raised-button color="primary" style=" font-size:20px; margin-left:1250px; margin-bottom:20px; width:200px; height:50px; " (click)="logOut()">Çıkış</button>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="page-title">
+                        <img style="width:60px; height:60px ;" src="../../../assets/svg/dosya.svg">
+                        <span> ToDo List App </span>
+                    </h2>
+                </div>
+                <div class="col-md-6">
+                    <form class="example-form">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Yapılacak Yeni Madde Ekle" #pending>
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" type="submit"
+                            (click)='addPendings(pending)'>Ekle</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <mat-card class="d-flex">
+                        <div class="example-container">
+                            <h4>Yapılacaklar</h4>
+                            <div cdkDropList #pendingsList="cdkDropList" [cdkDropListData]="data.pendings"
+                                [cdkDropListConnectedTo]="[inProgressList]" class="example-list"
+                                (cdkDropListDropped)="drop($event)">
+                                <div class="example-box" *ngFor="let item of data.pendings" cdkDrag>
+                                    <img class="svg" src="../../../assets/svg/saat.svg">
+                                    <span name="degistir" contenteditable="true" class="todo-title">{{item.todo}}</span >
+                                    <div class="button">
+                                        <button mat-icon-button color="warn" (click)="delete(item.id,'Pendings')">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="text-center pt-3" *ngIf="data.pendings?.length==0">
+                                    <small>Yapılacak bir madde yoktur.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="example-container">
+                            <h4>Yapılıyor Olanlar</h4>
+                            <div cdkDropList #inProgressList="cdkDropList" [cdkDropListData]="data.inProgress"
+                                [cdkDropListConnectedTo]="[pendingsList,doneList]" class="example-list"
+                                (cdkDropListDropped)="drop($event)">
+                                <div class="example-box" *ngFor="let item of data.inProgress" cdkDrag>
+                                    <img class="svg" src="../../../assets/svg/kumSaati.svg">
+                                    <span contenteditable="true" class="todo-title">{{item.todo}}</span>
+                                    <div class="button">
+                                        <button mat-icon-button style="flex:1;" color="warn" (click)="delete(item.id,'inProgress')">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="text-center pt-3" *ngIf="data.inProgress?.length==0">
+                                    <small>Yapılıyor olan bir madde yoktur.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="example-container">
+                            <h4>Bitenler</h4>
+                            <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="data.done"
+                                [cdkDropListConnectedTo]="[inProgressList]" class="example-list"
+                                (cdkDropListDropped)="drop($event)">
+                                <div class="example-box" *ngFor="let item of data.done" cdkDrag>
+                                    <img class="svg" src="../../../assets/svg/begeni.svg">
+                                    <span contenteditable="true" class="todo-title">{{item.todo}}</span>
+                                    <div class="button">
+                                        <button mat-icon-button color="warn" (click)="delete(item.id,'Done')">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="text-center pt-3" *ngIf="data.done?.length==0">
+                                    <small>Biten madde yoktur.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center mt-2">
+                    <small>Copyright 2019 ToDo List App</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

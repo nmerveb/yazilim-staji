@@ -1,0 +1,14 @@
+C:\Users\W10\source\repos\toDoList\toDoList\bin\Debug\netcoreapp2.1\toDoList.deps.json
+C:\Users\W10\source\repos\toDoList\toDoList\bin\Debug\netcoreapp2.1\toDoList.runtimeconfig.json
+C:\Users\W10\source\repos\toDoList\toDoList\bin\Debug\netcoreapp2.1\toDoList.runtimeconfig.dev.json
+C:\Users\W10\source\repos\toDoList\toDoList\bin\Debug\netcoreapp2.1\toDoList.dll
+C:\Users\W10\source\repos\toDoList\toDoList\obj\Debug\netcoreapp2.1\toDoList.csprojAssemblyReference.cache
+C:\Users\W10\source\repos\toDoList\toDoList\obj\Debug\netcoreapp2.1\toDoList.csproj.CoreCompileInputs.cache
+C:\Users\W10\source\repos\toDoList\toDoList\obj\Debug\netcoreapp2.1\toDoList.RazorAssemblyInfo.cache
+C:\Users\W10\source\repos\toDoList\toDoList\obj\Debug\netcoreapp2.1\toDoList.RazorAssemblyInfo.cs
+C:\Users\W10\source\repos\toDoList\toDoList\obj\Debug\netcoreapp2.1\toDoList.AssemblyInfoInputs.cache
+C:\Users\W10\source\repos\toDoList\toDoList\obj\Debug\netcoreapp2.1\toDoList.AssemblyInfo.cs
+C:\Users\W10\source\repos\toDoList\toDoList\obj\Debug\netcoreapp2.1\toDoList.RazorTargetAssemblyInfo.cache
+C:\Users\W10\source\repos\toDoList\toDoList\bin\Debug\netcoreapp2.1\toDoList.pdb
+C:\Users\W10\source\repos\toDoList\toDoList\obj\Debug\netcoreapp2.1\toDoList.dll
+C:\Users\W10\source\repos\toDoList\toDoList\obj\Debug\netcoreapp2.1\toDoList.pdb
